@@ -5,6 +5,7 @@ import os
 import random
 import uuid
 import pandas as pd
+import urllib.parse
 from dotenv import load_dotenv
 
 # Cargar variables
@@ -289,8 +290,15 @@ def renderizar_mensaje(texto):
             pass
         if len(partes) > 1:
             st.markdown(partes[1])
+            
+        texto_wa = urllib.parse.quote("¡Hola! Estoy usando AuraMed 🌿 y me ayudó a calcular mi copago exacto y el hospital que más me conviene. ¡Es increíble!")
+        st.link_button("📱 Compartir Opciones por WhatsApp", f"https://wa.me/?text={texto_wa}")
     else:
         st.markdown(texto)
+        
+    if "AURAMED-" in texto:
+        texto_wa = urllib.parse.quote("¡Hola! Acabo de agendar una cita médica exitosamente usando la IA de AuraMed 🌿. ¡Qué rápido y fácil!")
+        st.link_button("📱 Enviar Confirmación por WhatsApp", f"https://wa.me/?text={texto_wa}")
 
 for msg in st.session_state.messages:
     avatar = "🌿" if msg["role"] == "model" else "👤"
