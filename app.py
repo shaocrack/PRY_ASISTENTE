@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 # Cargar variables
-load_dotenv()
+load_dotenv(override=True)
 
 # --- CONFIGURACIÓN DE PÁGINA ---
 st.set_page_config(
