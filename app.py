@@ -269,8 +269,8 @@ if "chat_session" not in st.session_state:
     if paciente:
         msg = f"Bienvenido de nuevo, **{paciente['nombre']}** 🌿. Tengo en sistema tu plan {paciente['aseguradora']}. Cuéntame, ¿qué síntomas presentas?"
     else:
-        msg = "Bienvenido a **AuraMed** 🌿. Soy tu asistente médico virtual. Como estás en **Modo Invitado**, te ayudaré a hacer un triage de tus síntomas y darte costos referenciales.\n\nPor favor, **cuéntame qué síntomas presentas hoy**."
-    
+        msg = "Bienvenido a **AuraMed** 🌿. Soy tu asistente médico virtual. Como estás en **Modo Invitado**, te ayudaré a hacer un triage de tus síntomas y darte costos referenciales.\n\nEn la parte superior izquierda encontrarás un ícono por si dispones de un usuario y deseas iniciar sesión.\n\nPor favor, **cuéntame qué síntomas presentas hoy**."
+        
     st.session_state.messages = [{"role": "model", "content": msg}]
 
 
