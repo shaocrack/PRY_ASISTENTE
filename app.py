@@ -41,7 +41,7 @@ st.markdown("""
     }
     .premium-header h1 { color: #5FBFA2; font-size: 2.8rem; font-weight: 800; margin-bottom: 0.5rem; }
     .premium-header p { color: #344054; font-size: 1.1rem; font-weight: 400; }
-    #MainMenu {visibility: hidden;} footer {visibility: hidden;} header {visibility: hidden;}
+    footer {visibility: hidden;}
     .stChatMessage {
         background-color: #E8ECEF !important; border-radius: 15px; padding: 15px;
         border: 1px solid rgba(95, 191, 162, 0.1);
