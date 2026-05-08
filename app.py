@@ -117,25 +117,7 @@ st.markdown(f"""
 </div>
 """, unsafe_allow_html=True)
 
-if paciente is None:
-    st.info("💡 **Consejo para móviles:** Si no ves el menú lateral, puedes iniciar sesión aquí:")
-    with st.expander("🔑 Iniciar Sesión (Acceso a Cobertura Exacta)"):
-        with st.form("login_form_main"):
-            usuario = st.text_input("Usuario (ej. juan85)", key="user_main")
-            password = st.text_input("Contraseña (ej. 123)", type="password", key="pass_main")
-            submit = st.form_submit_button("Ingresar")
-            
-            if submit:
-                pacientes = datos_app.get("pacientes", {})
-                if usuario in pacientes and pacientes[usuario]["password"] == password:
-                    st.session_state.paciente_actual = pacientes[usuario]
-                    if "chat_session" in st.session_state:
-                        del st.session_state.chat_session
-                    if "messages" in st.session_state:
-                        del st.session_state.messages
-                    st.rerun()
-                else:
-                    st.error("Credenciales incorrectas")
+
 
 
 # --- HERRAMIENTAS DEL AGENTE ---
